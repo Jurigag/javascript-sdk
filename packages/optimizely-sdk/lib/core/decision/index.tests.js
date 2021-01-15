@@ -36,14 +36,14 @@ describe('lib/core/decision', function() {
   });
 
   describe('getVariationKey method', function() {
-    it('should return empty string when variation is null', function() {
+    it('should return null when variation is null', function() {
       var variationKey = decision.getVariationKey(rolloutDecisionObj);
-      assert.strictEqual(variationKey, '');
+      assert.strictEqual(variationKey, null);
     });
 
-    it('should return empty string when variation is not defined', function() {
+    it('should return null when variation is not defined', function() {
       var variationKey = decision.getVariationKey({});
-      assert.strictEqual(variationKey, '');
+      assert.strictEqual(variationKey, null);
     });
 
     it('should return variation key when variation is defined', function() {

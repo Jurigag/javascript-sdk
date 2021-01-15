@@ -28,10 +28,10 @@ export function getExperimentKey(decisionObj: DecisionObj): string {
 /**
  * Get variation key from the provided decision object
  * @param   {DecisionObj} decisionObj       Object representing decision
- * @returns {string}                        Variation key or empty string if variation is null
+ * @returns {string|null}                        Variation key or empty string if variation is null
  */
-export function getVariationKey(decisionObj: DecisionObj): string {
-   return decisionObj.variation?.key ?? '';
+export function getVariationKey(decisionObj: DecisionObj): string | null {
+   return decisionObj.variation?.key ?? null;
 }
 
 /**

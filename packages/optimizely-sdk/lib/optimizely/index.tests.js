@@ -4875,7 +4875,7 @@ describe('lib/optimizely', function() {
           });
           var decision = optlyInstance.decide(user, flagKey);
           var expectedDecision = {
-            variationKey: '',
+            variationKey: null,
             enabled: false,
             variables: expectedVariables,
             ruleKey: '',
@@ -4897,7 +4897,7 @@ describe('lib/optimizely', function() {
                 flagKey: 'feature_3',
                 enabled: false,
                 ruleKey: '',
-                variationKey: '',
+                variationKey: null,
                 variables: expectedVariables,
                 decisionEventDispatched: true,
                 reasons: [],
@@ -5776,7 +5776,7 @@ describe('lib/optimizely', function() {
             reasons: [],
           }
           var expectedDecision3 = {
-            variationKey: '',
+            variationKey: null,
             enabled: false,
             variables: expectedVariables3,
             ruleKey: '',
@@ -6506,7 +6506,7 @@ describe('lib/optimizely', function() {
                             flag_key: 'test_feature',
                             rule_key: '',
                             rule_type: 'rollout',
-                            variation_key: '',
+                            variation_key: null,
                             enabled: false,
                           },
                         },
