@@ -51,10 +51,10 @@ export var buildImpressionEvent = function(config) {
   let experimentId = null;
   let variationId = null;
 
-  if (experimentKey !== '' && variationKey !== null) {
+  if (experimentKey !== null && variationKey !== null) {
     variationId = projectConfig.getVariationIdFromExperimentAndVariationKey(configObj, experimentKey, variationKey);
   }
-  if (experimentKey !== '') {
+  if (experimentKey !== null) {
     experimentId = projectConfig.getExperimentId(configObj, experimentKey);
   }
   let layerId = null;

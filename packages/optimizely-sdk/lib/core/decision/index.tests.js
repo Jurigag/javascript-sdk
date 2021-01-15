@@ -19,14 +19,14 @@ import * as decision from './';
 
 describe('lib/core/decision', function() {
   describe('getExperimentKey method', function() {
-    it('should return empty string when experiment is null', function() {
+    it('should return null when experiment is null', function() {
       var experimentKey = decision.getExperimentKey(rolloutDecisionObj);
-      assert.strictEqual(experimentKey, '');
+      assert.strictEqual(experimentKey, null);
     });
 
-    it('should return empty string when experiment is not defined', function() {
+    it('should return null when experiment is not defined', function() {
       var experimentKey = decision.getExperimentKey({});
-      assert.strictEqual(experimentKey, '');
+      assert.strictEqual(experimentKey, null);
     });
 
     it('should return experiment key when experiment is defined', function() {

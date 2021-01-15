@@ -345,7 +345,7 @@ export default class Optimizely {
     let experimentId: string | null = null;
     let variationId: string | null = null;
 
-    if (experimentKey !=='' && variationKey !== null) {
+    if (experimentKey !== null && variationKey !== null) {
       variationId = projectConfig.getVariationIdFromExperimentAndVariationKey(configObj, experimentKey, variationKey);
       experimentId = projectConfig.getExperimentId(configObj, experimentKey);
     }
@@ -365,7 +365,7 @@ export default class Optimizely {
       logger: this.logger,
     };
     const impressionEvent = getImpressionEvent(impressionEventOptions);
-    const experiment = configObj.experimentKeyMap[experimentKey];
+    const experiment = experimentKey ? configObj.experimentKeyMap[experimentKey] : null;
     let variation;
     if (experiment && experiment.variationKeyMap && variationKey !== null) {
       variation = experiment.variationKeyMap[variationKey];

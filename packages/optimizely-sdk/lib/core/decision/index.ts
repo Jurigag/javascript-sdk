@@ -19,16 +19,16 @@ import { DecisionObj } from '../decision_service';
 /**
  * Get experiment key from the provided decision object
  * @param   {DecisionObj} decisionObj       Object representing decision
- * @returns {string}                        Experiment key or empty string if experiment is null
+ * @returns {string|null}                   Experiment key or null if experiment is null
  */
-export function getExperimentKey(decisionObj: DecisionObj): string {
-   return decisionObj.experiment?.key ?? '';
+export function getExperimentKey(decisionObj: DecisionObj): string | null {
+   return decisionObj.experiment?.key ?? null;
 }
 
 /**
  * Get variation key from the provided decision object
  * @param   {DecisionObj} decisionObj       Object representing decision
- * @returns {string|null}                        Variation key or empty string if variation is null
+ * @returns {string|null}                   Variation key or null if variation is null
  */
 export function getVariationKey(decisionObj: DecisionObj): string | null {
    return decisionObj.variation?.key ?? null;
